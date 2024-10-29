@@ -1,0 +1,143 @@
+._login_section {
+  background-color: #ffffff;
+  min-height: 100vh;
+  height: 100vh;
+  width: 100%;
+  overflow-y: hidden;
+  display: flex;
+
+  .bg_col,
+  .form_col {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bg_col {
+    display: none;
+
+    @include media("tablet") {
+      display: flex;
+      width: 60%;
+    }
+
+    @include media("lg-desktop") {
+      width: 58%;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      margin-top: -40px;
+
+      @include media("tablet") {
+        width: 100%;
+        padding: 0 1.25rem;
+      }
+
+      @include media("lg-desktop") {
+        width: 70%;
+        padding: 0;
+      }
+    }
+
+    .logo_wrapper {
+      position: relative;
+      top: 106px;
+
+      @include media("tablet") {
+        left: 30px;
+      }
+
+      @include media("lg-desktop") {
+        left: 60px;
+      }
+    }
+
+    .bg_lg {
+      margin: auto;
+
+      @include media("tablet") {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .form_col {
+    width: 100%;
+
+    @include media("tablet") {
+      width: calc(100% - 60%);
+      box-shadow: 0px 15px 90px 0px #00000008;
+    }
+
+    @include media("lg-desktop") {
+      width: calc(100% - 58%);
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      margin-top: -40px;
+      padding: 0 1.25rem;
+
+      @include media("lg-desktop") {
+        width: 70%;
+        padding: 0;
+      }
+
+      .title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 24.64px;
+        margin-bottom: 0.625rem;
+
+        @include media("tablet") {
+          font-size: 2rem;
+        }
+
+        @include media("lg-desktop") {
+          font-size: 2.5rem;
+          line-height: 54.64px;
+        }
+      }
+
+      .details {
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 20px;
+        margin-bottom: 3.75rem;
+
+        @include media("tablet") {
+          font-size: 1rem;
+        }
+
+        @include media("lg-desktop") {
+          font-size: 1.25rem;
+          line-height: 27.32px;
+        }
+      }
+    }
+
+    .form_wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      .forget_text {
+        cursor: pointer;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        font-weight: 600;
+        line-height: 16.39px;
+        margin-bottom: 6px;
+      }
+    }
+  }
+}

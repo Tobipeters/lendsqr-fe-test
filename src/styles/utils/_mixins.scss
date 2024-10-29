@@ -1,0 +1,11 @@
+@mixin media($breakpoint, $type: "min") {
+  $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+  @if $breakpoint-value {
+    @media (#{$type}-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint '#{$breakpoint}' not found";
+  }
+}
