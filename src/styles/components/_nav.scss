@@ -1,0 +1,91 @@
+._nav {
+  height: 100%;
+  box-shadow: 0px 5px 20px 0px #0000000a;
+  position: fixed;
+  transition: 0.3s all ease;
+  padding: 2.5rem 0;
+  overflow-y: auto;
+
+  &.show {
+    background-color: brown;
+    width: 80%;
+  }
+
+  @include media("desktop") {
+    width: $drawer-width !important;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .parent_list_group {
+    .p_list {
+      padding: 0 30px;
+      line-height: 14.08px;
+      font-weight: 500;
+      font-size: 0.75rem;
+      color: $secondary-color;
+      text-transform: uppercase;
+      color: $secondary-color;
+      margin-bottom: 0.625rem;
+    }
+
+    .child_list_group {
+      margin-bottom: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+      width: 100%;
+
+      .c_list .link {
+        transition: 0.3s all ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.625rem;
+        width: 100%;
+        height: 40px;
+        border-width: 0px 0px 0px 3px;
+        border-style: solid;
+        border-color: transparent;
+        text-decoration: none;
+        padding: 0 30px;
+        box-sizing: border-box;
+        color: $secondary-color;
+        line-height: 18.77px;
+        font-weight: 400;
+        font-size: 1rem;
+        opacity: 0.6;
+      }
+
+      .active,
+      .c_list .link:hover {
+        opacity: 1;
+        border-color: $primary-color;
+        background-color: #f3fcfc;
+      }
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px; /* Width of the scrollbar */
+    height: 4px; /* Height of the scrollbar in horizontal scrollbars */
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); /* Scrollbar color */
+    border-radius: 10px; /* Rounded edges */
+  }
+  
+  &::-webkit-scrollbar-track {
+    background-color: transparent; /* Track color */
+  }
+  
+  /* For Firefox */
+//   * {
+//     scrollbar-width: thin; /* Makes scrollbar thin */
+//     scrollbar-color: rgba(0, 0, 0, 0.2) transparent; /* Sets thumb and track colors */
+//   }
+}

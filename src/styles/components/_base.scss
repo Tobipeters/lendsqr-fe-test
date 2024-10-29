@@ -1,0 +1,12 @@
+.base_container {
+  @include media("desktop") {
+    min-height: calc(100vh - 100px);
+  }
+
+  .main_content {
+    @include media("desktop") {
+      margin-left: $drawer-width;
+      padding: 60px;
+    }
+  }
+}

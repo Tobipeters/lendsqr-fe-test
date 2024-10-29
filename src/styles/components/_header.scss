@@ -1,25 +1,49 @@
 ._header {
   width: 100%;
-  height: 100px;
+  height: unset;
   box-shadow: 3px 0px 20px 0px #0000000a;
   display: flex;
   align-items: center;
-  padding: 0 1.875rem;
+  padding: 0.75rem 1.5rem;
+  overflow-x: hidden;
+  box-sizing: border-box;
 
-  .logo_wrapper {
-    display: none;
+  .hamburger_menu {
+    cursor: pointer;
 
     @include media("desktop") {
-      display: block;
-      width: 145px;
-      height: 30px;
+      display: none;
+    }
+  }
+
+  .logo_container {
+    .logo_wrapper {
+      display: none;
+
+      img{
+        max-width: 100%;
+      }
+
+      @include media("desktop") {
+        display: block;
+        width: 145px;
+        height: 30px;
+      }
+    }
+
+    @include media("desktop") {
+      width: calc($drawer-width - 30px);
     }
   }
 
   .menu_bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
     @include media("desktop") {
       padding-left: 60px;
-      width: calc(100% - $drawer-width);
+      width: calc(100% - $drawer-width - 30px);
     }
 
     .search_bar {
@@ -52,11 +76,66 @@
       display: inline-flex;
       align-items: center;
 
+      .dov_link {
+        text-decoration: underline;
+        color: $secondary-color;
+        font-size: 0.875rem;
+
+        @include media("desktop") {
+          font-size: 1rem;
+        }
+      }
+
+      .bell_icon {
+        @include media("desktop") {
+          margin: 0 30px 0 47px;
+        }
+      }
+
       .user_info_wrapper {
         display: inline-flex;
         align-items: center;
         gap: 0.625rem;
+
+        .avatar {
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          object-fit: cover;
+
+          @include media("tablet") {
+            width: 40px;
+            height: 40px;
+          }
+
+          @include media("desktop") {
+            width: 48px;
+            height: 48px;
+          }
+        }
+
+        .name {
+          font-size: 0.875rem;
+          font-weight: 500;
+          line-height: 18.77px;
+          color: $secondary-color;
+          display: none;
+          align-items: center;
+
+          @include media("tablet") {
+            display: inline-flex;
+          }
+
+          @include media("desktop") {
+            font-size: 1rem;
+          }
+        }
       }
     }
+  }
+
+  @include media("tablet") {
+    padding: 0 1.875rem;
+    height: 100px;
   }
 }

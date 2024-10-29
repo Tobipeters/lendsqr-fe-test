@@ -8,12 +8,16 @@ interface IBaseLayoutProps {
 }
 
 export const BaseLayout: React.FC<IBaseLayoutProps> = ({ children }) => {
+  const [showMenu, setShowMenu] = React.useState<boolean>(false);
+
+  const handleToggleMenu = () => setShowMenu(!showMenu);
+
   return (
     <React.Fragment>
-      <Header />
-      <div className="">
-        <SideNav />
-        <main>
+      <Header handleToggleMenu={handleToggleMenu} />
+      <div className="base_container">
+        <SideNav showMenu={showMenu} />
+        <main className="main_content">
           {children}
           <Outlet />
         </main>

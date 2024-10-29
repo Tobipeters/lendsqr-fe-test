@@ -3,16 +3,32 @@ import Logo from "../../../assets/logo/lendsqr-logo.svg";
 import { LInput } from "../../input";
 import React from "react";
 import { LButton } from "../../button";
-import { SearchIcon } from "../../../assets/svg";
+import {
+  CaretDownIcon,
+  NotificationIcon,
+  SearchIcon,
+} from "../../../assets/svg";
+import AvatarImg from "../../../assets/images/avatar.png";
 
-export const Header = () => {
+interface IHeaderProps {
+  handleToggleMenu: () => void;
+}
+
+export const Header: React.FC<IHeaderProps> = ({ handleToggleMenu }) => {
   const [searchValue, setSearchValue] = React.useState<string>("");
 
   return (
     <header className="_header">
-      <Link to="/dashboard" className="logo_wrapper">
-        <img src={Logo} alt="Lendsqr logo" />
-      </Link>
+      <div onClick={handleToggleMenu} className="hamburger_menu">
+        menu
+      </div>
+
+      <div className="logo_container">
+        <Link to="/dashboard" className="logo_wrapper">
+          <img src={Logo} alt="Lendsqr logo" />
+        </Link>
+      </div>
+
       <div className="menu_bar">
         <div className="search_bar">
           <LInput
@@ -28,10 +44,21 @@ export const Header = () => {
         </div>
 
         <div className="r_menu">
+          <Link to="#" className="dov_link">
+            Doc
+          </Link>
 
-    <div className="user_info_wrapper">
+          <div className="bell_icon">
+            <NotificationIcon />
+          </div>
 
-    </div>
+          <div className="user_info_wrapper">
+            <img src={AvatarImg} className="avatar" alt="user avatar" />
+            <span className="name">
+              Oluwatobi
+              <CaretDownIcon />
+            </span>
+          </div>
         </div>
       </div>
     </header>
