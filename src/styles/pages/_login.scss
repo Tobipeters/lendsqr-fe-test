@@ -67,14 +67,27 @@
 
   .form_col {
     width: 100%;
+    position: relative;
+    padding: 0 1.25rem;
 
     @include media("tablet") {
       width: calc(100% - 60%);
       box-shadow: 0px 15px 90px 0px #00000008;
+      padding: 0;
     }
 
     @include media("lg-desktop") {
       width: calc(100% - 58%);
+    }
+
+    .logo_wrapper {
+      position: absolute;
+      top: 30px;
+      left: 20px;
+
+      @include media("tablet") {
+       display: none;
+      }
     }
 
     .wrapper {
@@ -96,6 +109,7 @@
         font-weight: 700;
         line-height: 24.64px;
         margin-bottom: 0.625rem;
+        color: $secondary-color;
 
         @include media("tablet") {
           font-size: 2rem;
@@ -112,6 +126,7 @@
         font-weight: 400;
         line-height: 20px;
         margin-bottom: 3.75rem;
+        color: $grey-100;
 
         @include media("tablet") {
           font-size: 1rem;
@@ -137,6 +152,7 @@
         font-weight: 600;
         line-height: 16.39px;
         margin-bottom: 6px;
+        color: $primary-color;
       }
     }
   }

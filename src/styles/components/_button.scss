@@ -1,11 +1,65 @@
-button{
-    height: 48px;
-    border-radius: 8px;
-    box-sizing: border-box;
-    border: none;
-    font-size: 0.875rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    line-height: 19.12px;
-    transition: 0.3s all ease;
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 19.12px;
+  transition: 0.3s all ease;
+  cursor: pointer;
+  width: fit-content;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  &.w_full {
+    width: 100%;
+  }
+
+  &.md {
+    height: 40px;
+  }
+
+  &.primary {
+    background-color: $primary-color;
+    color: #ffffff;
+  }
+
+  &.primary_outline {
+    background-color: transparent;
+    border-color: $primary-color;
+    color: $primary-color;
+  }
+
+  &.danger {
+    background-color: transparent;
+    border-color: $danger;
+    color: $danger;
+  }
+
+  &:disabled {
+    opacity: 0.3 !important;
+    cursor: not-allowed;
+  }
+
+  & .spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
