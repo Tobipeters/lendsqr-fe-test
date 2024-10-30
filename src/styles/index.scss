@@ -1,7 +1,7 @@
-@import "core/global";
 @import "core/variables";
-
 @import "utils/mixins";
+
+@import "core/global";
 
 @import "components/input";
 @import "components/button";
@@ -9,5 +9,7 @@
 @import "components/nav";
 @import "components/base";
 @import "components/dropdown";
+@import "components/table";
 
 @import "pages/login";
+@import "pages/users";

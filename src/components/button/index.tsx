@@ -1,7 +1,7 @@
 import React from "react";
 
 interface LButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "primary_outline" | "secondary" | "danger";
+  variant?: "primary" | "primary_outline" | "secondary" | "secondary_outline" | "danger";
   loading?: boolean;
   className?: string;
   size?: "md" | "lg";

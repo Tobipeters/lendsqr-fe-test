@@ -13,15 +13,18 @@ export const BaseLayout: React.FC<IBaseLayoutProps> = ({ children }) => {
   const handleToggleMenu = () => setShowMenu(!showMenu);
 
   return (
-    <React.Fragment>
+    <div className="_base">
       <Header handleToggleMenu={handleToggleMenu} />
       <div className="base_container">
-        <SideNav showMenu={showMenu} />
+        <SideNav
+          showMenu={showMenu}
+          handleToggleMenu={() => setShowMenu(false)}
+        />
         <main className="main_content">
           {children}
           <Outlet />
         </main>
       </div>
-    </React.Fragment>
+    </div>
   );
 };

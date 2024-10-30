@@ -22,6 +22,7 @@ import {
   UserSettingIcon,
   UserTimesIcon,
 } from "../assets/svg";
+import { DASHBOARD_URL, USERS_URL } from "./route-url";
 
 interface INavList {
   name: string;
@@ -40,7 +41,7 @@ export const navLists: INavList[] = [
     children: [
       {
         name: "Dashboard",
-        link: "/dashboard",
+        link: DASHBOARD_URL,
         icon: <DashboardIcon />,
       },
     ]
@@ -50,7 +51,7 @@ export const navLists: INavList[] = [
     children: [
       {
         name: "Users",
-        link: "",
+        link: USERS_URL,
         icon: <TwoUsersIcon />,
       },
       {

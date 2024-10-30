@@ -1,0 +1,104 @@
+._users_section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1.25rem;
+
+  @include media("desktop") {
+    gap: 2.5rem;
+  }
+
+  .metric_wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 26px;
+
+    @include media("desktop") {
+      flex-wrap: nowrap;
+      gap: 26px;
+    }
+
+    .metric_card {
+      box-shadow: 3px 5px 20px 0px #0000000a;
+      border: 1px solid #213f7d0f;
+      padding: 1.25rem 1.875rem 1.875rem;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      min-height: 160px;
+      box-sizing: border-box;
+      width: 100%;
+
+      @include media("tablet") {
+        width: calc(50% - 13px);
+      }
+
+      @include media("desktop") {
+        width: 100%;
+      }
+
+      .icon_wrapper {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .title {
+        text-transform: uppercase;
+        color: $grey-100;
+        font-size: 0.875rem;
+        font-weight: 500;
+        line-height: 16.42px;
+        margin: 0.875rem 0 0.75rem;
+      }
+
+      .count {
+        color: $secondary-color;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 28.15px;
+      }
+    }
+
+  
+  }
+
+  .more_icon{
+    cursor: pointer;
+  }
+
+  .more_list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 16.42px;
+      color: $grey-100;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      padding: 0.5rem 0.25rem;
+      transition: 0.3s all ease;
+
+      &:hover{
+        color: $primary-color;
+
+        svg  path{
+            fill: $primary-color;
+        }
+      }
+    }
+  }
+}

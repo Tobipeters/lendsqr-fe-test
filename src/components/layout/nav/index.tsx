@@ -6,16 +6,31 @@ import {
   CaretArrowDownIcon,
   LogoutIcon,
 } from "../../../assets/svg";
+import { useOutsideClick } from "../../../hooks";
 
 interface ISideNavProps {
   showMenu: boolean;
+  handleToggleMenu: () => void;
 }
 
-export const SideNav: React.FC<ISideNavProps> = ({ showMenu }) => {
+export const SideNav: React.FC<ISideNavProps> = ({
+  showMenu,
+  handleToggleMenu,
+}) => {
   const { pathname } = useLocation();
+  const navRef = React.useRef<HTMLDivElement>(null);
+
+  useOutsideClick({
+    ref: navRef,
+    handler: () => {
+      if (window.innerWidth < 1024) {
+        handleToggleMenu();
+      }
+    },
+  });
 
   return (
-    <nav className={`_nav ${showMenu ? "show" : ""}`}>
+    <nav ref={navRef} className={`_nav ${showMenu ? "show" : ""}`}>
       <Link to="" className="active switch">
         <BriefCaseIcon /> Switch Organization <CaretArrowDownIcon />
       </Link>
@@ -41,7 +56,7 @@ export const SideNav: React.FC<ISideNavProps> = ({ showMenu }) => {
         ))}
 
         <div className="footer_list">
-            <hr />
+          <hr />
           <Link to="" className="active switch">
             <LogoutIcon /> Logout
           </Link>
