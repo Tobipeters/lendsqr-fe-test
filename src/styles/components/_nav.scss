@@ -1,18 +1,37 @@
 ._nav {
+  z-index: 50;
   height: 100%;
+  background-color: #ffffff;
   box-shadow: 0px 5px 20px 0px #0000000a;
-  position: fixed;
+  position: absolute;
   transition: 0.3s all ease;
   padding: 2.5rem 0;
   overflow-y: auto;
+  width: 80%;
+  left: -1000px;
 
   &.show {
-    background-color: brown;
-    width: 80%;
+    // background-color: brown;
+    left: 0;
+  }
+
+  @include media("tablet") {
+    width: $drawer-width !important;
   }
 
   @include media("desktop") {
+    position: fixed;
     width: $drawer-width !important;
+    left: unset;
+  }
+
+  .nav_list_wrapper {
+    overflow-y: auto;
+    height: calc(100vh - 64px - 50px);
+
+    @include media("desktop") {
+      height: calc(100vh - 100px - 100px);
+    }
   }
 
   ul {
@@ -62,30 +81,66 @@
 
       .active,
       .c_list .link:hover {
-        opacity: 1;
-        border-color: $primary-color;
-        background-color: #f3fcfc;
+        opacity: 1 !important;
+        border-color: $primary-color !important;
+        background-color: #f3fcfc !important;
       }
     }
   }
 
-  &::-webkit-scrollbar {
+  .switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 10px 30px;
+    text-decoration: none;
+    margin-bottom: 2.5rem;
+    color: $secondary-color;
+  }
+
+  .footer_list {
+    hr {
+      width: 100%;
+      background-color: #213f7d;
+      opacity: 0.1;
+      margin: 0.625rem 0;
+    }
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+
+    .switch {
+      margin-bottom:  1.875rem;
+    }
+
+    .version {
+      padding-left: 30px;
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: $secondary-color;
+      line-height: 14.08px;
+    }
+  }
+
+  ::-webkit-scrollbar {
     width: 4px; /* Width of the scrollbar */
     height: 4px; /* Height of the scrollbar in horizontal scrollbars */
   }
-  
-  &::-webkit-scrollbar-thumb {
+
+  ::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.2); /* Scrollbar color */
     border-radius: 10px; /* Rounded edges */
   }
-  
-  &::-webkit-scrollbar-track {
+
+  ::-webkit-scrollbar-track {
     background-color: transparent; /* Track color */
   }
-  
+
   /* For Firefox */
-//   * {
-//     scrollbar-width: thin; /* Makes scrollbar thin */
-//     scrollbar-color: rgba(0, 0, 0, 0.2) transparent; /* Sets thumb and track colors */
-//   }
+  //   * {
+  //     scrollbar-width: thin; /* Makes scrollbar thin */
+  //     scrollbar-color: rgba(0, 0, 0, 0.2) transparent; /* Sets thumb and track colors */
+  //   }
 }

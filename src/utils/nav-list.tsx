@@ -40,7 +40,7 @@ export const navLists: INavList[] = [
     children: [
       {
         name: "Dashboard",
-        link: "",
+        link: "/dashboard",
         icon: <DashboardIcon />,
       },
     ]
