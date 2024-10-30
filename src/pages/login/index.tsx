@@ -3,11 +3,16 @@ import LoginImg from "../../assets/images/pablo-sign-in.svg";
 import LogoImg from "../../assets/logo/lendsqr-logo.svg";
 import { LButton, LInput } from "../../components";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = React.useState<string>("");
   const [password, setPassword] = React.useState<string>("");
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
+  const [passwordType, setPasswordType] = React.useState<"text" | "password">(
+    "password"
+  );
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     setIsLoading(true);
@@ -18,7 +23,13 @@ export const Login = () => {
         password,
       });
       setIsLoading(false);
+      navigate("/dashboard")
     }, 3000);
+  };
+
+  const handleChangePasswordTyoe = () => {
+    if (passwordType === "password") setPasswordType("text");
+    else setPasswordType("password");
   };
 
   return (
@@ -43,6 +54,7 @@ export const Login = () => {
 
           <form className="form_wrapper" onSubmit={handleSubmit}>
             <LInput
+              fullWidth
               required
               type="email"
               name="email"
@@ -52,8 +64,14 @@ export const Login = () => {
             />
 
             <LInput
+              fullWidth
               required
-              type="password"
+              icon={
+                <span onClick={handleChangePasswordTyoe} className="p_icon">
+                  SHOW
+                </span>
+              }
+              type={passwordType}
               name="password"
               label="Password"
               value={password}

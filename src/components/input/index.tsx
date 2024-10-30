@@ -8,6 +8,7 @@ interface LInputProps extends React.InputHTMLAttributes<HTMLElement> {
   _size?: "md" | "lg";
   fullWidth?: boolean;
   width?: string;
+  icon?: React.JSX.Element | string;
 }
 
 export const LInput: React.FC<LInputProps> = ({
@@ -23,6 +24,7 @@ export const LInput: React.FC<LInputProps> = ({
   error,
   width,
   _size = "lg",
+  icon,
   ...rest
 }) => {
   return (
@@ -30,6 +32,7 @@ export const LInput: React.FC<LInputProps> = ({
       style={{ width }}
       className={`input_wrapper ${className} ${fullWidth ? "w_full" : ""}`}
     >
+      <span className="icon">{icon}</span>
       <input
         type={type}
         placeholder={placeholder}

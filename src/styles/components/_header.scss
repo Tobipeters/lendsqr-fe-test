@@ -1,12 +1,24 @@
 ._header {
+  background-color: #ffffff;
   width: 100%;
-  height: unset;
+  height: 64px;
   box-shadow: 3px 0px 20px 0px #0000000a;
   display: flex;
   align-items: center;
   padding: 0.75rem 1.5rem;
   overflow-x: hidden;
   box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+
+  @include media("tablet") {
+    padding: 0 1.875rem;
+    height: 100px;
+  }
+
+  @include media("desktop") {
+  }
 
   .hamburger_menu {
     cursor: pointer;
@@ -20,7 +32,7 @@
     .logo_wrapper {
       display: none;
 
-      img{
+      img {
         max-width: 100%;
       }
 
@@ -132,10 +144,5 @@
         }
       }
     }
-  }
-
-  @include media("tablet") {
-    padding: 0 1.875rem;
-    height: 100px;
   }
 }

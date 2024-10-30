@@ -37,6 +37,12 @@ button {
     color: $primary-color;
   }
 
+  &.secondary_outline{
+    background-color: transparent;
+    border-color: $grey-100;
+    color: $grey-100;
+  }
+
   &.danger {
     background-color: transparent;
     border-color: $danger;

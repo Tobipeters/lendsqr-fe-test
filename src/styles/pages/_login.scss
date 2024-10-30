@@ -86,7 +86,7 @@
       left: 20px;
 
       @include media("tablet") {
-       display: none;
+        display: none;
       }
     }
 
@@ -145,14 +145,18 @@
       flex-direction: column;
       gap: 1.5rem;
 
+      .p_icon,
       .forget_text {
-        cursor: pointer;
+        color: $primary-color;
         text-transform: uppercase;
         font-size: 0.75rem;
         font-weight: 600;
         line-height: 16.39px;
+      }
+
+      .forget_text {
+        cursor: pointer;
         margin-bottom: 6px;
-        color: $primary-color;
       }
     }
   }
