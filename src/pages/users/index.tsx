@@ -116,7 +116,7 @@ export const Users = () => {
       field: "action",
       hasFilter: false,
       maxWidth: "70",
-      renderCell: (params) => (
+      renderCell: () => (
         <LDropdown
           title={
             <div className="more_icon">

@@ -11,7 +11,6 @@ interface IDataTableProps {
 }
 
 export const LDataTable: React.FC<IDataTableProps> = ({ headers, rows }) => {
-  const [isFilter, setIsFilter] = React.useState<boolean>(false);
 
   return (
     <div className="_table_container">

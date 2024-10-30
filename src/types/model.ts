@@ -1,8 +1,8 @@
 export interface ITableHeader {
   field: string;
-  headerName: string | React.JSX.Element;
-  renderCell?: (
-    params: [key: string]
+  headerName: string | React.JSX.Element; 
+   renderCell?: (
+    params: { row: ITableRow } 
   ) => React.JSX.Element | React.ReactNode | string;
   hasFilter?: boolean;
   minWidth?: string;

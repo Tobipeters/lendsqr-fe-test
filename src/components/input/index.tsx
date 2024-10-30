@@ -1,8 +1,8 @@
 import React from "react";
 
 interface LInputProps extends React.InputHTMLAttributes<HTMLElement> {
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   error?: string;
   label?: string;
   _size?: "md" | "lg";
