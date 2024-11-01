@@ -14,7 +14,7 @@ export const BaseLayout: React.FC<IBaseLayoutProps> = ({ children }) => {
 
   return (
     <div className="_base">
-      <Header handleToggleMenu={handleToggleMenu} />
+      <Header handleToggleMenu={(handleToggleMenu)} />
       <div className="base_container">
         <SideNav
           showMenu={showMenu}

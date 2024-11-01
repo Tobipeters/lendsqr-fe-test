@@ -18,10 +18,6 @@ export const Login = () => {
     setIsLoading(true);
     e.preventDefault();
     setTimeout(() => {
-      console.log({
-        email,
-        password,
-      });
       setIsLoading(false);
       navigate("/dashboard")
     }, 3000);

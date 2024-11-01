@@ -5,6 +5,7 @@ import React from "react";
 import { LButton } from "../../button";
 import {
   CaretDownIcon,
+  MenuIcon,
   NotificationIcon,
   SearchIcon,
 } from "../../../assets/svg";
@@ -20,7 +21,7 @@ export const Header: React.FC<IHeaderProps> = ({ handleToggleMenu }) => {
   return (
     <header className="_header">
       <div onClick={handleToggleMenu} className="hamburger_menu">
-        menu
+        <MenuIcon />
       </div>
 
       <div className="logo_container">
@@ -44,7 +45,7 @@ export const Header: React.FC<IHeaderProps> = ({ handleToggleMenu }) => {
         </div>
 
         <div className="r_menu">
-          <Link to="#" className="dov_link">
+          <Link to="#" className="doc_link">
             Doc
           </Link>
 

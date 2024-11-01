@@ -17,7 +17,7 @@ export const LDropdown: React.FC<IDropdownProps> = ({ title, children }) => {
 
   return (
     <div ref={dropdownRef} className="_dropdown">
-      <div onClick={() => setIsOpen(!isOpen)} className="">
+      <div onClick={() => setIsOpen(!isOpen)} className="_dropdown_title">
         {title}
       </div>
       {isOpen && (
