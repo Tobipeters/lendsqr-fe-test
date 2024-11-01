@@ -17,6 +17,11 @@ button {
   width: fit-content;
   padding-left: 1rem;
   padding-right: 1rem;
+  font-family: "Work Sans";
+
+  &:hover{
+    opacity: 0.65;
+  }
 
   &.w_full {
     width: 100%;

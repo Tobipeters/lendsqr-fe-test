@@ -45,6 +45,7 @@ export const SideNav: React.FC<ISideNavProps> = ({
                 <li key={index} className="c_list">
                   <Link
                     to={link}
+                    onClick={handleToggleMenu}
                     className={`link ${pathname == link ? "active" : ""}`}
                   >
                     {icon} {name}

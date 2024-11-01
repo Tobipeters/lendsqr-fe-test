@@ -17,7 +17,7 @@
     height: 20px;
   }
 
-  input {
+  input, select {
     box-sizing: border-box;
     border: 2px solid #545f7d26;
     height: 50px;
@@ -27,6 +27,7 @@
     font-size: 0.875rem;
 
     &.md {
+      overflow: hidden;
       height: 40px;
       border: 1px solid #545f7d26;
       border-radius: 8px;

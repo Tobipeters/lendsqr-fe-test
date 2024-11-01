@@ -14,7 +14,7 @@
     flex-wrap: wrap;
     gap: 26px;
 
-    @include media("desktop") {
+    @include media("lg-desktop") {
       flex-wrap: nowrap;
       gap: 26px;
     }
@@ -34,7 +34,7 @@
         width: calc(50% - 13px);
       }
 
-      @include media("desktop") {
+      @include media("lg-desktop") {
         width: 100%;
       }
 

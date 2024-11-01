@@ -11,10 +11,12 @@
   position: fixed;
   top: 0;
   z-index: 1000;
+  gap: 0.5rem;
 
   @include media("tablet") {
-    padding: 0 1.875rem;
+    padding: 0 3.75rem 0 1.875rem;
     height: 100px;
+    gap: 0.75rem;
   }
 
   @include media("desktop") {
@@ -61,9 +63,19 @@
     .search_bar {
       display: inline-flex;
       align-items: center;
+      width: 100%;
+      margin-right: -14px;
+
+      @include media("desktop") {
+        width: 400px;
+      }
 
       .input_wrapper {
-        width: 200px;
+        width: calc(100% - 70px);
+
+        @include media("desktop") {
+          width: calc(400px - 70px);
+        }
       }
 
       button {
@@ -73,25 +85,28 @@
         margin-left: -14px;
         border-radius: 0 8px 8px 0;
       }
-
-      @include media("desktop") {
-        width: 400px;
-
-        .input_wrapper {
-          width: calc(400px - 70px);
-        }
-      }
     }
 
     .r_menu {
       margin-left: auto;
       display: inline-flex;
       align-items: center;
+      gap: 0.75rem;
 
-      .dov_link {
+      @include media("desktop") {
+        gap: 0;
+      }
+
+      .doc_link {
+        font-family: Roboto;
         text-decoration: underline;
         color: $secondary-color;
-        font-size: 0.875rem;
+        display: none;
+
+        @include media("tablet") {
+          display: inline-block;
+          font-size: 0.875rem;
+        }
 
         @include media("desktop") {
           font-size: 1rem;
